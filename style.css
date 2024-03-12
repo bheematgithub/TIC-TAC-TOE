@@ -1,36 +1,9 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-color: aquamarine;
-  text-align: center;
-}
-
-h1{
-  padding: 1rem;
-}
-
-.container{
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .game{
   height: 60vh;
   width: 60vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1vmin;
 }
 
 .box{
-  background-color: rgb(255, 229, 195);
-  color: maroon;
   font-size: 3rem;
   height: 18vh;
   width: 18vh;
