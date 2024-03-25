@@ -33,21 +33,24 @@ boxes.forEach((x) => {
 });
 
 const checkWinner = () => {
+  let winnerFound = false; 
   winPatterns.forEach((ptrn) => {
-    let pos1 = boxes[ptrn[0]].innerText;
-    let pos2 = boxes[ptrn[1]].innerText;
-    let pos3 = boxes[ptrn[2]].innerText;
-    if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
-      if (pos1 === pos2 && pos3 === pos2) {
-        Winner(pos1)
-      } else if (count == 9) {
-        msg.innerText = `Match Draw!`;
-        msgCtr.classList.remove("hide");
+    if (!winnerFound) {
+      let pos1 = boxes[ptrn[0]].innerText;
+      let pos2 = boxes[ptrn[1]].innerText;
+      let pos3 = boxes[ptrn[2]].innerText;
+      if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
+        if (pos1 === pos2 && pos3 === pos2) {
+          Winner(pos1);
+          winnerFound = true;
+        } else if (count == 9) {
+          msg.innerText = `Match Draw!`;
+          msgCtr.classList.remove("hide");
+        }
       }
     }
   });
 }
-
 const Winner = (win) => {
   msg.innerText = `Congratulations, Winner is ${win}`;
   msgCtr.classList.remove("hide");
